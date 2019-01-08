@@ -11,9 +11,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./prism.css">
-  <script src="prism.js"></script>
+  <link rel="stylesheet" href="resources/css/styles.css">
+  <link rel="stylesheet" href="vendors/prism/prism.css">
+  <script src="vendors/prism/prism.js"></script>
   <title>Fundamentos de Javascript</title>
 </head>
 <body>
@@ -29,26 +29,41 @@
       <span></span>
     </label>
     
-    <nav>    
+    <nav>
       <ul>
-        <li><a href="#">Prototype</a></li>
-        <li><a href="#">Scope de variables</a></li>
-        <li><a href="#">Closures</a></li>
-        <li><a href="#">This, _this y arrow functions</a></li>
-        <li><a href="">Función bind</a></li>
-      </ul>  
+        <li><a href="array">Array</a></li>
+        <li><a href="#prototype">Prototypes</a></li>
+        <li><a href="#scope">Scope de variables</a></li>
+        <li><a href="#closure">Closures</a></li>
+        <li><a href="#general">This, _this y arrow functions</a></li>
+        <li><a href="#bind">Función bind</a></li>
+      </ul>
     </nav>
 
     <div class="content">
-        
-      <div id="#proto">
-        <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Protitype
+      <!-- ARRAY -->
+      <div id="#array">
+        <a class="link" data-toggle="collapse" href="#collapseArray" role="button" aria-expanded="false" aria-controls="collapseArray">
+          <h2>Arrays</h2>
         </a>
       </div>
 
-      <div class="collapse" id="collapseExample">
-        <h2>Protitype</h2>
+      <div class="collapse" id="collapseArray">
+        <pre>
+          <code class="language-javascript">
+            // Array
+          </code>
+        </pre>
+      </div>
+
+      <!-- PROTOTYPE -->
+      <div id="#prototype">
+        <a class="link" data-toggle="collapse" href="#collapsePrototype" role="button" aria-expanded="false" aria-controls="collapsePrototype">
+          <h2>Protitype</h2>
+        </a>
+      </div>
+
+      <div class="collapse" id="collapsePrototype">
         <pre>
           <code class="language-javascript">
             // Calcular distancias.
@@ -92,18 +107,67 @@
           </code>
         </pre>
       </div><!-- End tab -->
-      <div id"#scope">
-        <h2>Scope de variables</h2>
+      
+      <!-- SCOPE -->
+      <div id="#scope">
+        <a class="link" data-toggle="collapse" href="#collapseScope" role="button" aria-expanded="false" aria-controls="collapseScope">
+          <h2>Scope</h2>
+        </a>
       </div>
-      <div id"#closure">
-        <h2>Closures</h2>
+  
+      <div class="collapse" id="collapseScope">
+        <pre>
+          <code class="language-javascript">
+            // Scope
+          </code>
+        </pre>
       </div>
-      <div id"#this">
-        <h2>This, _this y arrow functions</h2>
+
+      <!-- CLOSURE -->
+      <div id="#closure">
+        <a class="link" data-toggle="collapse" href="#collapseClosure" role="button" aria-expanded="false" aria-controls="collapseClosure">
+          <h2>Closures</h2>
+        </a>
       </div>
-      <div id"#bind">
-        <h2>Función bind</h2>
+  
+      <div class="collapse" id="collapseClosure">
+        <pre>
+          <code class="language-javascript">
+            // Closures
+          </code>
+        </pre>
       </div>
+
+      <!-- GENERAL -->
+      <div id="#general">
+        <a class="link" data-toggle="collapse" href="#collapseGeneral" role="button" aria-expanded="false" aria-controls="collapseGeneral">
+          <h2>This, _this y arrow functions</h2>
+        </a>
+      </div>
+  
+      <div class="collapse" id="collapseGeneral">
+        <pre>
+          <code class="language-javascript">
+            // This, _this y arrow functions
+          </code>
+        </pre>
+      </div>
+
+      <!-- BIND -->
+      <div id="#bind">
+        <a class="link" data-toggle="collapse" href="#collapseBind" role="button" aria-expanded="false" aria-controls="collapseBind">
+          <h2>Bind</h2>
+        </a>
+      </div>
+  
+      <div class="collapse" id="collapseBind">
+        <pre>
+          <code class="language-javascript">
+            // Bind
+          </code>
+        </pre>
+      </div>
+
     </div>
   </div>
 </body>

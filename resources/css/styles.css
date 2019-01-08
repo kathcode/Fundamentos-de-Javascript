@@ -111,3 +111,12 @@ body input:checked ~ nav > ul > li {
   color: #ffffff;
   padding: 20px;
 }
+
+.link {
+  text-decoration: none !important;
+  color: #ffffff;
+}
+
+.link:hover {
+  color: #05a99b;
+}
