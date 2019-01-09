@@ -1,39 +1,43 @@
-// Calcular distancias.
+/** 
+ * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+ * 
+ * More:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
+ * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
+*/
 
-// Prototype
-function Punto(x, y) {
-  // this hace referencia al objeto de esta funcion
-  this.x = x;
-  this.y = y;
+// -> Create a prototype Person with attributes
+function Person (name, lastName) {
+  this.name = name;
+  this.lastName = lastName;
 }
 
-// Agregar método al prototipo Punto (Mover un punto)
-Punto.prototype.moverEnX = function moverEnX(x) {
-  this.x += x;
+// Create a new person
+const catalina = new Person('Catalina', 'Meneses')
+// Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
+
+// Create another person
+const lesly = new Person('Lesly', 'Carmona')
+// Console: lesly > Person {name: "Lesly", lastName: "Carmona"}
+
+/*
+  If i edit the object catalina, lesly is not going to modify because
+  they have different references in memory
+*/
+lesly.name = 'Another'
+/*
+  Console: lesly > Person {name: "Another", lastName: "Carmona"}
+  Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
+*/
+
+// -> Adding a new method for Person to say hello
+Person.prototype.greet = function () {
+  console.log(`Hello, my name is ${this.name} ${this.lastName}`)
 }
 
-// Agregar método al prototipo Punto (Mover un punto)
-Punto.prototype.moverEnY = function moverEnY(y) {
-  this.y += y;
-}
+// -> By adding a method to the prototype, it can be used by the objects that were created with this prototype
+catalina.greet()
+// Console: Hello, my name is Catalina Meneses
 
-// Distacia de un punto con respecto al otro.
-Punto.prototype.distancia = function distancia(p) {
-  const x = this.x - p.x;
-  const y = this.y -p.y;
-
-  return Math.sqrt(x * x + y *y)
-}
-
-// Crear un nuevo objeto de tipo Punto
-const p1 = new Punto(0, 4);
-
-const p2 = new Punto(3, 0);
-
-console.log(p1.distancia(p2));
-console.log(p2.distancia(p1));
-p1.moverEnX(10);
-console.log(p1.distancia(p2));
-p2.moverEnY(-4);
-console.log(p1.distancia(p2))
-
+lesly.greet()
+// Console: Hello, my name is Lesly Carmona
