@@ -3,6 +3,9 @@
  * 
  * Closures are functions that handle independent variables. In other words,
  * the function defined in the closure "remembers" the scope in which it was created.
+ * 
+ * Another definition: A closure is a feature in JavaScript where an inner function has access
+ * to the outer (enclosing) function’s variables — a scope chain.
  */
 
 // 1. Example

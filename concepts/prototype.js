@@ -6,7 +6,7 @@
  * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
 */
 
-// -> Create a prototype Person with attributes
+/* --- Create a prototype Person with attributes --- */
 function Person (name, lastName) {
   this.name = name;
   this.lastName = lastName;
@@ -30,12 +30,12 @@ lesly.name = 'Another'
   Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
 */
 
-// -> Adding a new method for Person to say hello
+/* --- Adding a new method for Person to say hello --- */
 Person.prototype.greet = function () {
   console.log(`Hello, my name is ${this.name} ${this.lastName}`)
 }
 
-// -> By adding a method to the prototype, it can be used by the objects that were created with this prototype
+/* --- By adding a method to the prototype, it can be used by the objects that were created with this prototype --- */
 catalina.greet()
 // Console: Hello, my name is Catalina Meneses
 
