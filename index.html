@@ -1,594 +1,888 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- Styles -->
-  <link rel="stylesheet" href="resources/css/styles.css">
-  <link rel="stylesheet" href="vendors/prism/prism.css">
-  <script src="vendors/prism/prism.js"></script>
-  <title>Fundamentos de Javascript</title>
-</head>
-<body>
-  <!-- Menu -->
-  <div>
-    <h1>Fundamentos de Javascript<span>by kath_code</span></h1>
-    <button onclick="test"></button>
-    <input id="burger" type="checkbox" />
-    
-    <label for="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    
-    <nav>
-      <ul>
-        <li><a href="#time">The time in Javascript</a></li>
-        <li><a href="#scope">Scope</a></li>
-        <li><a href="#prototype">Prototypes</a></li>
-        <li><a href="#classes">Classes (Based on prototypes)</a></li>
-        <li><a href="#callbacks">Callbacks</a></li>
-        <li><a href="#promises">Promises</a></li>
-        <li><a href="#closure">Closures</a></li>
-        <li><a href="#general">This, _this and arrow functions</a></li>
-        <li><a href="#bind">Bind</a></li>
-        <li><a href="#applay">Applay</a></li>
-        <li><a href="#call">Call</a></li>
-        <li><a href="#semantic">Semantic</a></li>
-        <li><a href="#selectors">Selectors</a></li>
-        <li><a href="#dom">The DOM</a></li>
-        <li><a href="#typescript">Typescript</a></li>
-        <li><a href="#ecmascript">Ecmascript</a></li>
-      </ul>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="resources/css/styles.css" />
+    <link rel="stylesheet" href="vendors/prism/prism.css" />
+    <script src="vendors/prism/prism.js"></script>
+    <title>Fundamentos de Javascript</title>
+  </head>
+  <body>
+    <!-- Menu -->
+    <div>
+      <h1>Fundamentos de Javascript<span>by kath_code</span></h1>
+      <button onclick="test"></button>
+      <input id="burger" type="checkbox" />
 
-    <div class="content">
+      <label for="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-      <!-- THE TIME -->
-      <div id="#time">
-        <a class="link" data-toggle="collapse" href="#collapseTime" role="button" aria-expanded="false" aria-controls="collapseTime">
-          <h2>→ The time in Javascript </h2>
-        </a>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="#comments">Comments</a></li>
+          <li><a href="#time">The time in Javascript</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#prototype">Prototypes</a></li>
+          <li><a href="#classes">Classes (Based on prototypes)</a></li>
+          <li><a href="#callbacks">Callbacks</a></li>
+          <li><a href="#promises">Promises</a></li>
+          <li><a href="#closure">Closures</a></li>
+          <li><a href="#general">This, _this and arrow functions</a></li>
+          <li><a href="#bind">Bind</a></li>
+          <li><a href="#applay">Applay</a></li>
+          <li><a href="#call">Call</a></li>
+          <li><a href="#semantic">Semantic</a></li>
+          <li><a href="#selectors">Selectors</a></li>
+          <li><a href="#dom">The DOM</a></li>
+          <li><a href="#typescript">Typescript</a></li>
+          <li><a href="#ecmascript">Ecmascript</a></li>
+          <li><a href="#constructor">Constructor</a></li>
+        </ul>
+      </nav>
 
-      <div class="collapse" id="collapseTime">
-        <pre>
-          <code class="language-javascript">
-            /*
-              In principle, any task that has been delegated to the browser through a callback,
-              must wait until all the instructions of the main program have been executed.
-              For this reason, the waiting time defined in functions such as setTimeout,
-              does not guarantee that the callback is executed in that time exactly,
-              but at any time thereafter, only when the task queue has been emptied.
-            */
+      <div class="content">
+        <!-- COMMENTS -->
+        <div id="#comments">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseComments"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseComments"
+          >
+            <h2>→ Comments</h2>
+          </a>
+        </div>
 
-            console.log('a')
-            console.log('b')
-            console.log('c')
+        <div class="collapse" id="collapseComments">
+          <pre>
+            <code class="language-javascript">
+              /*
+                - The comments should explain why not what.
+                - Where a code have many comments, is signal of poorly code.
+              */
+              </ul>
+            </code>
+          </pre>
+        </div>
 
-            // Console: a
-            // Console: b
-            // Console: c
+        <!-- THE TIME -->
+        <div id="#time">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseTime"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseTime"
+          >
+            <h2>→ The time in Javascript</h2>
+          </a>
+        </div>
 
-            console.log('a')
-            setTimeout(function() {
+        <div class="collapse" id="collapseTime">
+          <pre>
+            <code class="language-javascript">
+              /*
+                In principle, any task that has been delegated to the browser through a callback,
+                must wait until all the instructions of the main program have been executed.
+                For this reason, the waiting time defined in functions such as setTimeout,
+                does not guarantee that the callback is executed in that time exactly,
+                but at any time thereafter, only when the task queue has been emptied.
+              */
+
+              console.log('a')
               console.log('b')
-            }, 2000)
-            console.log('c')
+              console.log('c')
 
-            // Console: a
-            // Console: c
-            // Console: b
-          </code>
-        </pre>
-      </div>
+              // Console: a
+              // Console: b
+              // Console: c
 
-      <!-- SCOPE -->
-      <div id="#scope">
-        <a class="link" data-toggle="collapse" href="#collapseScope" role="button" aria-expanded="false" aria-controls="collapseScope">
-          <h2>→ Scope</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseScope">
-        <pre>
-          <code class="language-javascript">
-            /*
-              Scope determines the accessibility (visibility) of variables.
-              there are two types of scope: local and global
-            */
-            
-            /*
-              --- Local scopre ---
-            
-              The variable date is defined in the function,
-              so you can use it just inside the function
-            */
-            
-            function currentDay() {
-              var date = new Date();
-              var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            
-              return `Hi, today is ${days[date.getDay()]}`;
-            }
-            // console: => "Hi, today is Monday"
-            
-            /*
-              --- Global scopre ---
+              console.log('a')
+              setTimeout(function() {
+                console.log('b')
+              }, 2000)
+              console.log('c')
+
+              // Console: a
+              // Console: c
+              // Console: b
+            </code>
+          </pre>
+        </div>
+
+        <!-- SCOPE -->
+        <div id="#scope">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseScope"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseScope"
+          >
+            <h2>→ Scope</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseScope">
+          <pre>
+            <code class="language-javascript">
+              /*
+                Scope determines the accessibility (visibility) of variables.
+                there are two types of scope: local and global
+
+              */
               
-              The variable months are defined outside of the currentMonth function
-              And you can call it outside of the function or inside of the function
-            */
-            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            
-            function currentMonth() {
-              var date = new Date();
-              var monthNumer = date.getMonth();
-              return `Hi we are in ${months[monthNumer]}`;
-            }
-            // console: => "Hi we are in January"
-          </code>
-        </pre>
-      </div>
+              /*
+                --- Local scopre ---
+              
+                The variable date is defined in the function,
+                so you can use it just inside the function
+              */
+              
+              function currentDay() {
+                var date = new Date();
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              
+                return `Hi, today is ${days[date.getDay()]}`;
+              }
+              // console: => "Hi, today is Monday"
+              
+              /*
+                --- Global scopre ---
+                
+                The variable months are defined outside of the currentMonth function
+                And you can call it outside of the function or inside of the function
+              */
+              var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+              
+              function currentMonth() {
+                var date = new Date();
+                var monthNumer = date.getMonth();
+                return `Hi we are in ${months[monthNumer]}`;
+              }
+              // console: => "Hi we are in January"
 
-      <!-- PROTOTYPE -->
-      <div id="#prototype">
-        <a class="link" data-toggle="collapse" href="#collapsePrototype" role="button" aria-expanded="false" aria-controls="collapsePrototype">
-          <h2>→ Protitype</h2>
-        </a>
-      </div>
+              /*
+                --- Hoisting ---
+                
+                When a variable declaration is conceptually moved to the top of its enclosing scope
+              */
 
-      <div class="collapse" id="collapsePrototype">
-        <pre>
-          <code class="language-javascript">
-            /** 
-            * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
-            * 
-            * More:
-            * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
-            * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
-            */
-            
-            /* --- Create a prototype Person with attributes --- */
-            function Person (name, lastName) {
-              this.name = name;
-              this.lastName = lastName;
-            }
-            
-            // Create a new person
-            const catalina = new Person('Catalina', 'Meneses')
-            // Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
-            
-            // Create another person
-            const lesly = new Person('Lesly', 'Carmona')
-            // Console: lesly > Person {name: "Lesly", lastName: "Carmona"}
-            
-            /*
-              If i edit the object catalina, lesly is not going to modify because
-              they have different references in memory
-            */
-            lesly.name = 'Another'
-            /*
-              Console: lesly > Person {name: "Another", lastName: "Carmona"}
-              Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
-            */
-            
-            /* --- Adding a new method for Person to say hello --- */
-            Person.prototype.greet = function () {
-              console.log(`Hello, my name is ${this.name} ${this.lastName}`)
-            }
+              /*
+                --- Nested Hoisting ---
+                
+                When we declare a variable this is available anywhere in that scope.
+              */
+            </code>
+          </pre>
+        </div>
 
-            /* --- By adding a method to the prototype, it can be used by the objects that were created with this prototype --- */
-            catalina.greet()
-            // Console: Hello, my name is Catalina Meneses
+        <!-- PROTOTYPE -->
+        <div id="#prototype">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapsePrototype"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapsePrototype"
+          >
+            <h2>→ Protitype</h2>
+          </a>
+        </div>
 
-            lesly.greet()
-            // Console: Hello, my name is Lesly Carmona
-          </code>
-        </pre>
-      </div><!-- End tab -->
-
-      <!-- CLASSES -->
-      <div id="#classes">
-        <a class="link" data-toggle="collapse" href="#collapseClasses" role="button" aria-expanded="false" aria-controls="collapseClasses">
-          <h2>→ Classes - Based on prototypes</h2>
-        </a>
-      </div>
-
-      <div class="collapse" id="collapseClasses">
-        <pre>
-          <code class="language-javascript">
-            /** 
-            * JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical
-            * sugar over JavaScript's existing prototype-based inheritance. The class
-            * syntax does not introduce a new object-oriented inheritance model to JavaScript.
-            * 
-            * More:
-            * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
-            */
-
-            /* --- Create a new class Person --- */
-            class Person {
-              constructor(name, lastName) {
+        <div class="collapse" id="collapsePrototype">
+          <pre>
+            <code class="language-javascript">
+              /** 
+              * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+              * 
+              * More:
+              * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
+              * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
+              */
+              
+              /* --- Create a prototype Person with attributes --- */
+              function Person (name, lastName) {
                 this.name = name;
                 this.lastName = lastName;
               }
-
-              greet() {
+              
+              // Create a new person
+              const catalina = new Person('Catalina', 'Meneses')
+              // Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
+              
+              // Create another person
+              const lesly = new Person('Lesly', 'Carmona')
+              // Console: lesly > Person {name: "Lesly", lastName: "Carmona"}
+              
+              /*
+                If i edit the object catalina, lesly is not going to modify because
+                they have different references in memory
+              */
+              lesly.name = 'Another'
+              /*
+                Console: lesly > Person {name: "Another", lastName: "Carmona"}
+                Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
+              */
+              
+              /* --- Adding a new method for Person to say hello --- */
+              Person.prototype.greet = function () {
                 console.log(`Hello, my name is ${this.name} ${this.lastName}`)
               }
-            }
 
+              /* --- By adding a method to the prototype, it can be used by the objects that were created with this prototype --- */
+              catalina.greet()
+              // Console: Hello, my name is Catalina Meneses
 
-            /* --- Create a person that extends (inherits) of the class person --- */
-            class Developer extends Person {
-              constructor(name, lastName) {
-                // First we need to call the parameters of the Person class
-                super(name, lastName);
-              }
+              lesly.greet()
+              // Console: Hello, my name is Lesly Carmona
+            </code>
+          </pre>
+        </div>
+        <!-- End tab -->
 
-              greet() {
-                console.log(`Hello, my name is ${this.name} ${this.lastName} and I'm developer :)`)
-              }
-            }
+        <!-- CLASSES -->
+        <div id="#classes">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseClasses"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseClasses"
+          >
+            <h2>→ Classes - Based on prototypes</h2>
+          </a>
+        </div>
 
-            // Create a new person
-            const catalina = new Person('Catalina', 'Meneses')
-            // Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
-
-            // Create another person
-            const lesly = new Developer('Lesly', 'Carmona')
-            // Console: lesly > Person {name: "Lesly", lastName: "Carmona"}
-
-
-            /* --- Excecute the method greet for each person ---*/
-
-            catalina.greet()
-            // Console: Hello, my name is Catalina Meneses
-
-            lesly.greet()
-            // Console: Hello, my name is Lesly Carmona and I'm developer :)
-          </code>
-        </pre>
-      </div>
-
-      <!-- CALLBACKS -->
-      <div id="#callbacks">
-        <a class="link" data-toggle="collapse" href="#collapseCallback" role="button" aria-expanded="false" aria-controls="collapseCallback">
-          <h2>→ Callbacks</h2>
-        </a>
-      </div>
-
-      <div class="collapse" id="collapseCallback">
-        <pre>
-          <code class="language-javascript">
-            /** 
-            * A callback is a function that is to be executed after another function has
-            * sfinished executing — hence the name ‘call back’.
-            * 
-            * More:
-            * https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
-            */
-
-            /* --- Simple callback example --- */
-            // The function receives another function as a parameter and executes it at the end of the function
-            function doHomework(subject, callback) {
-              alert(`Starting my ${subject} homework.`);
-              callback();
-            }
-            // The callback function
-            doHomework('math', function() {
-              alert('Finished my homework');
-            });
-
-            /* --- Request callback example --- */
-            get('search/homeworks', params, function(err, data, response) {
-              if(!err){
-                // This is where the magic will happen
-              } else {
-                console.log(err);
-              }
-            })
-            /*
-              Note: A callback is important here because we need to wait for a response
-              from the server before we can move forward in our code.
-            */
-          </code>
-        </pre>
-      </div>
-
-      <!-- PROMISES -->
-      <div id="#promises">
-        <a class="link" data-toggle="collapse" href="#collapsePromises" role="button" aria-expanded="false" aria-controls="collapsePromises">
-          <h2>→ Promises</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapsePromises">
-        <pre>
-          <code class="language-javascript">
-            /*
-              A Promise is an object representing the eventual completion or failure
-              of an asynchronous operation. Since most people are consumers of
-              already-created promises.
-            
-              Status:
-            
-                        fulfilled - .then(val => {})
-                      /
-              pending
-                      \
-                        rejected - .catch(err => {})
-            
-              More:
-              https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
-            */
-            
-            /* --- Creating a new promise --- */
-            new Promise(function (resolve, rejected) {
-            
-            }).then(val => {
-              // Here goes the code when the promise is resolved.
-            }).catch(err => {
-              // Here goes the code when the promise is faild.
-            })
-            
-            /* --- Creating a new promise that return a request response --- */
-            function getCountries() {
-              const url = 'https://restcountries.eu/rest/v2/';
-            
-              return new Promise((resolve, rejected) => {
-                fetch(url)
-                .then(response => response.json())
-                .then(data => resolve(data)) // Prints result from `response.json()`
-                .catch(err => rejected(err)); // Print the error
-              })
-            }
-            
-            // Resolving the promise
-            getCountries()
-              .then(function (data) {
-                console.log(data);
-              })
-              .catch(function (err) {
-                console.log(err)
-              })
-            // console: => [countries...]
-          </code>
-        </pre>
-      </div>
-
-      <!-- CLOSURE -->
-      <div id="#closure">
-        <a class="link" data-toggle="collapse" href="#collapseClosure" role="button" aria-expanded="false" aria-controls="collapseClosure">
-          <h2>→ Closure</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseClosure">
-        <pre>
-          <code class="language-javascript">
-            /**
-              * Closures
+        <div class="collapse" id="collapseClasses">
+          <pre>
+            <code class="language-javascript">
+              /** 
+              * JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical
+              * sugar over JavaScript's existing prototype-based inheritance. The class
+              * syntax does not introduce a new object-oriented inheritance model to JavaScript.
               * 
-              * Closures are functions that handle independent variables. In other words,
-              * the function defined in the closure "remembers" the scope in which it was created.
-              * 
-              * Another definition: A closure is a feature in JavaScript where an inner function has access
-              * to the outer (enclosing) function’s variables — a scope chain.
+              * More:
+              * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
               */
-             
-             // 1. Example
-             
-             // The closure
-             function greetFamilly(lastName) {
-               // Return a function
-               return function greetMember(firstName) {
-                 console.log(`Hello ${firstName} ${lastName}`);
-               }
-             }
-             
-             // This variable retrn a function
-             const greetMeneses = greetFamilly('Meneses')
-             // Pass the parameter to the function
-             greetMeneses('Catalina'); // ==> Hello Catalina Meneses
-             
-             //2. Example
-             function sum(n1) {
-               return function(n2) {
-                 return n1 + n2;
-               }
-             }
-             
-             const sumar5 = sum(5);
-             const sumar10 = sum(10);
-             
-             console.log(sumar5(2)); // ==> 7
-             console.log(sumar10(5)); // ==> 15
-          </code>
-        </pre>
-      </div>
 
-      <!-- GENERAL -->
-      <div id="#general">
-        <a class="link" data-toggle="collapse" href="#collapseGeneral" role="button" aria-expanded="false" aria-controls="collapseGeneral">
-          <h2>→ This, _this y arrow functions</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseGeneral">
-        <pre>
-          <code class="language-javascript">
-            // This, _this y arrow functions
-          </code>
-        </pre>
-      </div>
+              /* --- Create a new class Person --- */
+              class Person {
+                constructor(name, lastName) {
+                  this.name = name;
+                  this.lastName = lastName;
+                }
 
-      <!-- BIND -->
-      <div id="#bind">
-        <a class="link" data-toggle="collapse" href="#collapseBind" role="button" aria-expanded="false" aria-controls="collapseBind">
-          <h2>→ Bind</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseBind">
-        <pre>
-          <code class="language-javascript">
-            // Bind
-          </code>
-        </pre>
-      </div>
+                greet() {
+                  console.log(`Hello, my name is ${this.name} ${this.lastName}`)
+                }
+              }
 
-      <!-- APPLAY -->
-      <div id="#applay">
-        <a class="link" data-toggle="collapse" href="#collapseApplay" role="button" aria-expanded="false" aria-controls="collapseApplay">
-          <h2>→ Applay</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseApplay">
-        <pre>
-          <code class="language-javascript">
-            /*
-              Change the context of the this in the function.
-              With the apply() method, you can write a method that can be used on different objects.
-            
-              The bind() method creates a new function that, when called.
-              The first parameter in apply() method sets the "this" value
-              which is the object upon which the function is invoked.
-              The second parameter of the apply() method accepts the
-              arguments to the actual function as an array.
-            */
-            
-            const kath = {
-              name: 'Catalina',
-              lastName: 'Meneses',
-              age: 28,
-            };
-            
-            const lesly = {
-              name: 'Lesly',
-              lastName: 'Carmona',
-              age: 90,
-            }
-            
-            const locations = ['Colombia', 'Medellín'];
-            
-            const greeting = function(country = 'Colombia', city = 'Medellín'){
-              return `${this.name}, welcome to ${city} ${country}`;
-            };
-            
-            greeting()
-            // console: => "Hi, mi name is  undefined and i'm undefined"
-            
-            greeting.apply(kath, location);
-            // console: => "Catalina, welcome to Medellín Colombia"
-            
-            greeting.apply(lesly);
-            // console: => "Lesly, welcome to Medellín Colombia"
-          </code>
-        </pre>
-      </div>
 
-      <!-- CALL -->
-      <div id="#call">
-        <a class="link" data-toggle="collapse" href="#collapseCall" role="button" aria-expanded="false" aria-controls="collapseCall">
-          <h2>→ Call</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseCall">
-        <pre>
-          <code class="language-javascript">
-            // Call
-          </code>
-        </pre>
-      </div>
+              /* --- Create a person that extends (inherits) of the class person --- */
+              class Developer extends Person {
+                constructor(name, lastName) {
+                  // First we need to call the parameters of the Person class
+                  super(name, lastName);
+                }
 
-      <!-- SEMANTIC -->
-      <div id="#semantic">
-        <a class="link" data-toggle="collapse" href="#collapseSemantic" role="button" aria-expanded="false" aria-controls="collapseSemantic">
-          <h2>→ Semantic</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseSemantic">
-        <pre>
-          <code class="language-javascript">
-            // Semantic
-          </code>
-        </pre>
-      </div>
+                greet() {
+                  console.log(`Hello, my name is ${this.name} ${this.lastName} and I'm developer :)`)
+                }
+              }
 
-      <!-- SELECTORS -->
-      <div id="#selectors">
-        <a class="link" data-toggle="collapse" href="#collapseSelectors" role="button" aria-expanded="false" aria-controls="collapseSelectors">
-          <h2>→ Selectors</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseSelectors">
-        <pre>
-          <code class="language-javascript">
-            // Selectors
-          </code>
-        </pre>
-      </div>
+              // Create a new person
+              const catalina = new Person('Catalina', 'Meneses')
+              // Console: catalina > Person {name: "Catalina", lastName: "Meneses"}
 
-      <!-- DOM -->
-      <div id="#dom">
-        <a class="link" data-toggle="collapse" href="#collapseDom" role="button" aria-expanded="false" aria-controls="collapseDom">
-          <h2>→ Dom</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseDom">
-        <pre>
-          <code class="language-javascript">
-            // The DOM
-          </code>
-        </pre>
-      </div>
+              // Create another person
+              const lesly = new Developer('Lesly', 'Carmona')
+              // Console: lesly > Person {name: "Lesly", lastName: "Carmona"}
 
-      <!-- TYPESCRIPT -->
-      <div id="#typescript">
-        <a class="link" data-toggle="collapse" href="#collapseTypescript" role="button" aria-expanded="false" aria-controls="collapseTypescript">
-          <h2>→ Typescript</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseTypescript">
-        <pre>
-          <code class="language-javascript">
-            // Typescript
-          </code>
-        </pre>
-      </div>
 
-      <!-- ECMASCRIPT -->
-      <div id="#ecmascript">
-        <a class="link" data-toggle="collapse" href="#collapseEcmascript" role="button" aria-expanded="false" aria-controls="collapseEcmascript">
-          <h2>→ Ecmascript</h2>
-        </a>
-      </div>
-  
-      <div class="collapse" id="collapseEcmascript">
-        <pre>
-          <code class="language-javascript">
-            // Ecmascript
-          </code>
-        </pre>
-      </div>
+              /* --- Excecute the method greet for each person ---*/
 
+              catalina.greet()
+              // Console: Hello, my name is Catalina Meneses
+
+              lesly.greet()
+              // Console: Hello, my name is Lesly Carmona and I'm developer :)
+            </code>
+          </pre>
+        </div>
+
+        <!-- CALLBACKS -->
+        <div id="#callbacks">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseCallback"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseCallback"
+          >
+            <h2>→ Callbacks</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseCallback">
+          <pre>
+            <code class="language-javascript">
+              /** 
+              * A callback is a function that is to be executed after another function has
+              * sfinished executing — hence the name ‘call back’.
+              * 
+              * More:
+              * https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
+              */
+
+              /* --- Simple callback example --- */
+              // The function receives another function as a parameter and executes it at the end of the function
+              function doHomework(subject, callback) {
+                alert(`Starting my ${subject} homework.`);
+                callback();
+              }
+              // The callback function
+              doHomework('math', function() {
+                alert('Finished my homework');
+              });
+
+              /* --- Request callback example --- */
+              get('search/homeworks', params, function(err, data, response) {
+                if(!err){
+                  // This is where the magic will happen
+                } else {
+                  console.log(err);
+                }
+              })
+              /*
+                Note: A callback is important here because we need to wait for a response
+                from the server before we can move forward in our code.
+              */
+            </code>
+          </pre>
+        </div>
+
+        <!-- PROMISES -->
+        <div id="#promises">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapsePromises"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapsePromises"
+          >
+            <h2>→ Promises</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapsePromises">
+          <pre>
+            <code class="language-javascript">
+              /*
+                A Promise is an object representing the eventual completion or failure
+                of an asynchronous operation. Since most people are consumers of
+                already-created promises.
+              
+                Status:
+              
+                          fulfilled - .then(val => {})
+                        /
+                pending
+                        \
+                          rejected - .catch(err => {})
+              
+                More:
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+              */
+              
+              /* --- Creating a new promise --- */
+              new Promise(function (resolve, rejected) {
+              
+              }).then(val => {
+                // Here goes the code when the promise is resolved.
+              }).catch(err => {
+                // Here goes the code when the promise is faild.
+              })
+              
+              /* --- Creating a new promise that return a request response --- */
+              function getCountries() {
+                const url = 'https://restcountries.eu/rest/v2/';
+              
+                return new Promise((resolve, rejected) => {
+                  fetch(url)
+                  .then(response => response.json())
+                  .then(data => resolve(data)) // Prints result from `response.json()`
+                  .catch(err => rejected(err)); // Print the error
+                })
+              }
+              
+              // Resolving the promise
+              getCountries()
+                .then(function (data) {
+                  console.log(data);
+                })
+                .catch(function (err) {
+                  console.log(err)
+                })
+              // console: => [countries...]
+            </code>
+          </pre>
+        </div>
+
+        <!-- CLOSURE -->
+        <div id="#closure">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseClosure"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseClosure"
+          >
+            <h2>→ Closure</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseClosure">
+          <pre>
+            <code class="language-javascript">
+              /**
+                * Closures
+                * 
+                * Closures are functions that handle independent variables. In other words,
+                * the function defined in the closure "remembers" the scope in which it was created.
+                * 
+                * Another definition: A closure is a feature in JavaScript where an inner function has access
+                * to the outer (enclosing) function’s variables — a scope chain.
+                */
+              
+              // 1. Example
+              
+              // The closure
+              function greetFamilly(lastName) {
+                // Return a function
+                return function greetMember(firstName) {
+                  console.log(`Hello ${firstName} ${lastName}`);
+                }
+              }
+              
+              // This variable retrn a function
+              const greetMeneses = greetFamilly('Meneses')
+              // Pass the parameter to the function
+              greetMeneses('Catalina'); // ==> Hello Catalina Meneses
+              
+              //2. Example
+              function sum(n1) {
+                return function(n2) {
+                  return n1 + n2;
+                }
+              }
+              
+              const sumar5 = sum(5);
+              const sumar10 = sum(10);
+              
+              console.log(sumar5(2)); // ==> 7
+              console.log(sumar10(5)); // ==> 15
+            </code>
+          </pre>
+        </div>
+
+        <!-- GENERAL -->
+        <div id="#general">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseGeneral"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseGeneral"
+          >
+            <h2>→ This, _this y arrow functions</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseGeneral">
+          <pre>
+            <code class="language-javascript">
+              // This, _this y arrow functions
+            </code>
+          </pre>
+        </div>
+
+        <!-- BIND -->
+        <div id="#bind">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseBind"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseBind"
+          >
+            <h2>→ Bind</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseBind">
+          <pre>
+            <code class="language-javascript">
+              // Bind
+            </code>
+          </pre>
+        </div>
+
+        <!-- APPLAY -->
+        <div id="#applay">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseApplay"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseApplay"
+          >
+            <h2>→ Applay</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseApplay">
+          <pre>
+            <code class="language-javascript">
+              /*
+                Change the context of the this in the function.
+                With the apply() method, you can write a method that can be used on different objects.
+              
+                The bind() method creates a new function that, when called.
+                The first parameter in apply() method sets the "this" value
+                which is the object upon which the function is invoked.
+                The second parameter of the apply() method accepts the
+                arguments to the actual function as an array.
+              */
+              
+              const kath = {
+                name: 'Catalina',
+                lastName: 'Meneses',
+                age: 28,
+              };
+              
+              const lesly = {
+                name: 'Lesly',
+                lastName: 'Carmona',
+                age: 90,
+              }
+              
+              const locations = ['Colombia', 'Medellín'];
+              
+              const greeting = function(country = 'Colombia', city = 'Medellín'){
+                return `${this.name}, welcome to ${city} ${country}`;
+              };
+              
+              greeting()
+              // console: => "Hi, mi name is  undefined and i'm undefined"
+              
+              greeting.apply(kath, location);
+              // console: => "Catalina, welcome to Medellín Colombia"
+              
+              greeting.apply(lesly);
+              // console: => "Lesly, welcome to Medellín Colombia"
+            </code>
+          </pre>
+        </div>
+
+        <!-- CALL -->
+        <div id="#call">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseCall"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseCall"
+          >
+            <h2>→ Call</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseCall">
+          <pre>
+            <code class="language-javascript">
+              // Call
+            </code>
+          </pre>
+        </div>
+
+        <!-- SEMANTIC -->
+        <div id="#semantic">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseSemantic"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseSemantic"
+          >
+            <h2>→ Semantic</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseSemantic">
+          <pre>
+            <code class="language-javascript">
+              // Semantic
+            </code>
+          </pre>
+        </div>
+
+        <!-- SELECTORS -->
+        <div id="#selectors">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseSelectors"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseSelectors"
+          >
+            <h2>→ Selectors</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseSelectors">
+          <pre>
+            <code class="language-javascript">
+              // Selectors
+            </code>
+          </pre>
+        </div>
+
+        <!-- DOM -->
+        <div id="#dom">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseDom"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseDom"
+          >
+            <h2>→ Dom</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseDom">
+          <pre>
+            <code class="language-javascript">
+              // The DOM
+            </code>
+          </pre>
+        </div>
+
+        <!-- TYPESCRIPT -->
+        <div id="#typescript">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseTypescript"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseTypescript"
+          >
+            <h2>→ Typescript</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseTypescript">
+          <pre>
+            <code class="language-javascript">
+              // Typescript
+            </code>
+          </pre>
+        </div>
+
+        <!-- ECMASCRIPT -->
+        <div id="#ecmascript">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseEcmascript"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseEcmascript"
+          >
+            <h2>→ Ecmascript</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseEcmascript">
+          <pre>
+            <code class="language-javascript">
+              // Ecmascript
+            </code>
+          </pre>
+        </div>
+
+        <!-- CONSTRUCTOR -->
+        <div id="#constructor">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseConstructor"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseConstructor"
+          >
+            <h2>→ Constructor</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseConstructor">
+          <pre>
+            <code class="language-javascript">
+              /**
+                *
+                * The constructor method is a method used to creating and
+                * initializing an object created.
+                *
+                */
+
+                function Apple(height, width, color) {
+                  this.height = height;
+                  this.width = width;
+                  this.color = color;
+                }
+
+                /**
+                * When you create a new apple, it will create an instance of
+                * the Apple object function (The instance are unique).
+                */
+
+                const apple1 = new Apple(10, 10, "red");
+                console.log(apple1); // ==> Apple {height: 10, width: 10, color: "red"}
+
+                const apple2 = new Apple(20, 20, "green");
+                console.log(apple2); // ==> Apple {height: 20, width: 20, color: "green"}
+
+                /**
+                * Constructor with prototype
+                */
+
+                Apple.prototype.eat = () => "Eat the apple";
+                Apple.prototype.throw = () => "Throw the apple";
+
+                apple1.eat();
+                // Console: "Eat the apple"
+
+                apple2.throw();
+                // Console: "Throw the apple"
+
+                /**
+                * Use THIS in the prototype
+                */
+
+                Apple.prototype.wash = () => `Wash the apple ${this.color}`;
+
+            </code>
+          </pre>
+        </div>
+
+        <!-- COMPARITION OPERATORS -->
+        <div id="#operators">
+          <a
+            class="link"
+            data-toggle="collapse"
+            href="#collapseComparisonOperators"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseComparisonOperators"
+          >
+            <h2>→ Comparison Operators</h2>
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseComparisonOperators">
+          <pre>
+            <code class="language-javascript">
+              // Comparison Operators
+
+              /**
+              * Comparison operators
+              */
+
+              /* --- Equal (==) Check the values --- */
+              10 == 10;
+              // Console: true
+              10 == 100;
+              // Console: false
+
+              /* --- Case sensitive --- */
+              "hello" == "hello";
+              // Console: true
+              "hello" == "Hello";
+              // Console: false
+
+              /* --- Others --- */
+
+              null == null;
+              // Console: true
+              true == true;
+              // Console: true
+              false == false;
+              // Console: true
+              false == true;
+              // Console: false
+              null == undefined;
+              // Console: true
+
+              /* --- Equal (===) check vallues and type as well --- */
+
+              null === undefined;
+              // Console: false
+
+              10 === "10";
+              // Console: false
+
+            </code>
+          </pre>
+        </div>
+
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
